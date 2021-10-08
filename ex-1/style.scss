@@ -1,0 +1,50 @@
+$baseColor: rgb(0, 54, 202);
+$amountOfLighten: 5%;
+$amountOfDarken: 2%;
+$hueDegBetweenColors: 55deg;
+
+[class^="container-"] {
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  width: 50%;
+  min-width: 300px;
+  margin: 16px auto;
+}
+
+.box {
+  border: solid 1px black;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: if($baseColor == white, black, white);
+}
+
+.base-color {
+  flex: 1.5;
+}
+
+@mixin createPalette {
+  @for $i from 1 to 5 {
+    .darken-#{$i} {
+      background-color: darken($baseColor, $i * $amountOfDarken);
+    }
+  }
+  @for $i from 1 to 5 {
+    .lighten-#{$i} {
+      background-color: lighten($baseColor, $i * $amountOfLighten);
+    }
+  }
+}
+
+@for $i from 1 to 4 {
+  .container-#{$i} {
+    @include createPalette();
+  }
+  .container-#{$i} .base-color {
+    background-color: $baseColor;
+  }
+  $baseColor: adjust-hue($baseColor, $i * $hueDegBetweenColors);
+}
