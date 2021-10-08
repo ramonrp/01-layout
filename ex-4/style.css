@@ -1,0 +1,11 @@
+.max-width-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.card {
+  width: 250px;
+  display: grid;
+}
