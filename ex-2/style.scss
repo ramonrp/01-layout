@@ -1,0 +1,40 @@
+// Change import to change theme
+@import "_variables2.scss";
+
+.wrapper {
+  width: 150px;
+  padding: 16px;
+}
+
+.element {
+  height: 100px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $borderRadius;
+}
+
+.base {
+  background-color: $baseColor;
+}
+
+.important {
+  background-color: $importantColor;
+}
+
+.warning {
+  background-color: $warningColor;
+}
+
+.main-font {
+  font-family: $mainFont;
+}
+
+.secondary-font {
+  font-family: $secondFont;
+}
+
+.shadow {
+  box-shadow: $boxShadow;
+}
